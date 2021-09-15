@@ -1,0 +1,105 @@
+﻿@model CarApplication.Models.Car
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+<h4>Car</h4>
+<hr />
+<div class="row">
+    <div class="col-9">
+
+        <dl class="row">
+
+            <dt class="col-sm-2">
+                <h6>Car Brand</h6>
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.CarBrand)
+            </dd>
+            <dt class="col-sm-2">
+                <h6>Description</h6>
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+            <dt class="col-sm-2">
+                <h6>Price</h6>
+            </dt>
+            <dd class="col-sm-10">
+                <p style="display:inline"> @Html.DisplayFor(model => model.Price) <a>GEL</a></p>
+            </dd>
+            <dt class="col-sm-2">
+                <h6>Realease Year</h6>
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.RealeaseYear)
+            </dd>
+
+            <dt class="col-sm-2">
+                <h6>ABS</h6>
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Abs)
+            </dd>
+            <dt class="col-sm-2">
+                <h6>ელექტრო შუშები</h6>
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Elshushebi)
+            </dd>
+            <dt class="col-sm-2">
+                <h6>ლუქი</h6>
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Luqi)
+            </dd>
+            <dt class="col-sm-2">
+                <h6>Bluetooth</h6>
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Bluetooth)
+            </dd>
+            <dt class="col-sm-2">
+                <h6>სიგნალიზაცია</h6>
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Signal)
+            </dd>
+            <dt class="col-sm-2">
+                <h6>პარკინგ კონტროლი</h6>
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ParkingControl)
+            </dd>
+            <dt class="col-sm-2">
+                <h6>ნავიგაცია</h6>
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Navigation)
+            </dd>
+            <dt class="col-sm-2">
+                <h6>ბორტ კომპიუტერი</h6>
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.BortComputer)
+            </dd>
+            <dt class="col-sm-2">
+                <h6>მულტი საჭე</h6>
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.MultiWheel)
+            </dd>
+        </dl>
+        <a asp-action="Index">Back to List</a>
+    </div>
+    <div class="col-2" >
+        <img src="~/Images/Photos/@Html.DisplayFor(model => model.imgurl)" width="600" height="500" style="float:right"/>
+    </div>
+   
+</div>
+
+
+    
+

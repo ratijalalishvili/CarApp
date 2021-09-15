@@ -1,0 +1,104 @@
+﻿@model CarApplication.Models.Car
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Car</h4>
+<hr />
+<div >
+    <form asp-action="Create" class="row" enctype="multipart/form-data" asp-controller="Cars">
+        <div class="col-md-5" >
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label">Car Brand</label>
+                <input asp-for="CarBrand" class="form-control" />
+                <span asp-validation-for="CarBrand" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Description</label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Price in USD</label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Realease Year</label>
+                <input asp-for="RealeaseYear" class="form-control" />
+                <span asp-validation-for="RealeaseYear" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Abs" />ABS
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Elshushebi" />ელექტრონული შუშები
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Luqi" />ლუქი
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Bluetooth" />Bluetooth
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Signal" />სიგნალიზაცია
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="ParkingControl" />პარკინგ კონტროლი
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Navigation" />ნავიგაცია
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="BortComputer" />ბორტ კომპიუტერი
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="MultiWheel" />მულტი საჭე
+                </label>
+            </div>
+    
+            </div>
+        <div class="col-md-5" style="margin-left:130px">
+            <div class="form-group">
+                <label asp-for="CarPhoto" class="control-label"></label>
+                <div class="custom-file">
+                    <input asp-for="CarPhoto" class="custom-file-input" id="customFile">
+                    <label class="custom-file-label" for="customFIle">Choose Photo</label>
+                </div>
+                <span asp-validation-for="CarPhoto" class="text-danger"></span>
+                
+            </div>
+            <input type="submit" value="Create" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

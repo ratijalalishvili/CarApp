@@ -1,0 +1,54 @@
+﻿@model IEnumerable<CarApplication.Models.Car>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Car List</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <h5>Car Brand</h5> 
+            </th>
+            <th>
+                <h5>Description</h5>
+            </th>
+            <th>
+                <h5>Price</h5>
+            </th>
+            <th>
+                <h5>Realease Year</h5>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarBrand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                <p style="display:inline">@Html.DisplayFor(modelItem => item.Price) <a>$</a></p>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RealeaseYear)
+            </td>
+           
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
